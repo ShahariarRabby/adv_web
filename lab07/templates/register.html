@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container bg-light">
+    <h2 class="text-center">Sign Up</h2>
+    <form action="{{ url_for('register') }}" method="post">
+        <div class="form-group">
+            <label for="first_name">First Name:</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required>
+        </div>
+        <div class="form-group">
+            <label for="last_name">Last Name:</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password:</label>
+            <input type="password" class="form-control" id="password" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Register</button>
+    </form>
+    <div class="alert alert-info mt-4" role="alert">
+        <h5>Password Requirements:</h5>
+        <ul>
+            <li>Must contain a lowercase letter</li>
+            <li>Must contain an uppercase letter</li>
+            <li>Must end in a number</li>
+            <li>Must be at least 8 characters long</li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

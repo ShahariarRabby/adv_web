@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="form-container bg-light">
+    <h2 class="text-center">Password Check Result</h2>
+    <div class="alert {{ 'alert-success' if 'valid' in message else 'alert-danger' }}" role="alert">
+        {{ message }}
+    </div>
+    {% if lockout %}
+    <div class="alert alert-danger" role="alert">
+        Account locked due to too many failed attempts.
+    </div>
+    {% elif user_found %}
+    <div class="alert alert-success" role="alert">
+        User found in the database.
+    </div>
+    {% elif user_created %}
+    <div class="alert alert-success" role="alert">
+        New user created successfully.
+    </div>
+    {% else %}
+    <div class="alert alert-warning" role="alert">
+        Invalid password. Failed attempts: {{ failed_attempts }} of 3.
+    </div>
+    {% endif %}
+    <a href="{{ url_for('index') }}" class="btn btn-secondary btn-block">Go Back</a>
+</div>
+{% endblock %}
