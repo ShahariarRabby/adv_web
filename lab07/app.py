@@ -118,8 +118,7 @@ def secret_page():
     """
     user_id = session.get('user_id')
     if user_id:
-        # user = db.session.get(User, user_id)  # Use Session.get() to retrieve the user
-        user = db.session.query(User).get(user_id)  # Correct method
+        user = db.session.query(User).get(user_id)
 
         return render_template('secret_page.html', user=user)
     else:
@@ -129,4 +128,4 @@ def secret_page():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-    app.run(debug=True, use_reloader=False, port=5002)
+    app.run(debug=True, use_reloader=False)
