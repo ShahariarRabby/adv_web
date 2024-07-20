@@ -1,5 +1,5 @@
 # Flask Application Lab 07
-
+### Visit the live site [shahariarrabby1.pythonanywhere.com](shahariarrabby1.pythonanywhere.com)
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -39,7 +39,7 @@ This Flask application, developed for Lab 07, implements a user registration and
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/ShahariarRabby/adv_web/
+   git clone https://github.com/ShahariarRabby/adv_web.git
    cd lab07
    ```
 
